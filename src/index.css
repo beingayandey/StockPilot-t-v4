@@ -25,6 +25,11 @@
   --light-variant-three: #E3F4F4;
   --light-variant-four: #FFF0F5;
   --light-variant-five: #FFF6F6;
+  --light-variant-six: #FFF8E3;
+  --light-variant-seven: #F5E8DD;
+  --light-variant-eight: #e3f5ff;
+  --light-variant-nine: #C7DCA7;
+  --light-variant-seven: #DFCCFB;
 
   --black-variant-one: #6b7280;
 
@@ -51,12 +56,14 @@
   --primary-background: #0f172a;
   --light-variant-one: #334155;
   --light-variant-two: #282A3A;
-
   --light-variant-three: #2A2A2A;
-
   --light-variant-four: #3B4655;
-
   --light-variant-five: #5C3A40;
+  --light-variant-six: #3A2F1B;
+  --light-variant-seven: #5A3E7F;
+  --light-variant-eight: #1E3B4B;
+  --light-variant-nine: #4A5D37;
+
   --black-variant-one: #94a3b8;
 
   --neutral-100: #2a2a2a;
@@ -98,7 +105,12 @@
   --color-light-variant-two: var(--light-variant-two);
   --color-light-variant-three: var(--light-variant-three);
   --color-light-variant-four: var(--light-variant-four);
-  --color-black-variant-five: var(--black-variant-five);
+  --color-light-variant-five: var(--light-variant-five);
+  --color-light-variant-six: var(--light-variant-six);
+  --color-light-variant-seven: var(--light-variant-seven);
+  --color-light-variant-eight: var(--light-variant-eight);
+  --color-light-variant-nine: var(--light-variant-nine);
+  --color-black-variant-one: var(--black-variant-one);
 
   --color-neutral-100: var(--neutral-100);
   --color-neutral-200: var(--neutral-200);
