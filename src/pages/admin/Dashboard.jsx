@@ -1,8 +1,8 @@
 import React from 'react'
-import WidgetsCard from '../components/dashboard/WidgetsCard';
-import RecentOrderTables from '../components/dashboard/RecentOrderTables';
-import LowStockProducts from '../components/dashboard/LowStockProducts';
-import RevenueChart from '../components/dashboard/RevenueChart';
+import WidgetsCard from '../../components/admin/dashboard/WidgetsCard';
+import RecentOrderTables from '../../components/admin/dashboard/RecentOrderTables';
+import LowStockProducts from '../../components/admin/dashboard/LowStockProducts';
+import RevenueChart from '../../components/admin/dashboard/RevenueChart';
 
 const Dashboard = () => {
     const kpis = [

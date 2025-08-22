@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { DotsThree, CaretUp, CaretDown } from '@phosphor-icons/react';
+import { motion } from 'framer-motion';
 import TableFooter from './TableFooter';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
@@ -175,7 +176,14 @@ const RecentOrderTables = () => {
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table className="w-full ">
+                    <motion.table
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.18 }}
+                        variants={{ show: { transition: { staggerChildren: 0.02 } } }}
+                        className="w-full "
+                    >
                         <TableHeader
                             columns={columns}
                             sortBy={sortBy}
@@ -190,7 +198,7 @@ const RecentOrderTables = () => {
                             toggleRow={toggleRow}
                             getStatusColor={getStatusColor}
                         />
-                    </table>
+                    </motion.table>
                 </div>
 
                 <TableFooter

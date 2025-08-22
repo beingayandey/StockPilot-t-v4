@@ -12,7 +12,7 @@ const Header = ({ toggleSidebar, toggleNotification }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="main-header z-50 bg-[var(--color-primary-white)] shadow-[var(--sidebar-boxshadow)]">
+        <header className="main-header h-[var(--header-height)] z-50 bg-[var(--color-primary-white)] shadow-[var(--sidebar-boxshadow)]">
             <div className="inner-header p-4">
                 <div className="flex justify-between items-center">
                     {/* Left */}

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { menuData } from "../data/menuData";
+import { menuData } from "../../data/menuData";
 import SidebarItem from "./sidebar/SidebarItem";
 import UserMenu from "./sidebar/UserMenu";
-import logo from "../assets/images/icon.png";
+import logo from "../../assets/images/icon.png";
 
 const Sidebar = ({ isOpen, isHovered, setIsHovered }) => {
     const [openDropdown, setOpenDropdown] = useState(null);

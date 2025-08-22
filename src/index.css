@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300..800&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -7,6 +8,7 @@
   --sidebar-width: 220px;
   --notifcation-width: 350px;
   --sidebar-width-collapsed: 80px;
+  --header-height: 61px;
 
   --light-background: rgb(240, 240, 240 / 0.9);
 
@@ -21,15 +23,17 @@
   --primary-white: #ffffff;
   --primary-background: #38425c;
   --light-variant-one: #e6ebf3;
-  --light-variant-two: #C4DFDF;
-  --light-variant-three: #E3F4F4;
-  --light-variant-four: #FFF0F5;
-  --light-variant-five: #FFF6F6;
-  --light-variant-six: #FFF8E3;
-  --light-variant-seven: #F5E8DD;
+  --light-variant-two: #c4dfdf;
+  --light-variant-three: #e3f4f4;
+  --light-variant-four: #fff0f5;
+  --light-variant-five: #fff6f6;
+  --light-variant-six: #fff8e3;
+  --light-variant-seven: #f5e8dd;
   --light-variant-eight: #e3f5ff;
-  --light-variant-nine: #C7DCA7;
-  --light-variant-ten: #DFCCFB;
+  --light-variant-nine: #c7dca7;
+  --light-variant-ten: #dfccfb;
+  --light-variant-eleven: #e5ecf6;
+  --light-variant-twelve: #ebf3fe;
 
   --black-variant-one: #6b7280;
   --black-variant-two: #1c1c1c33;
@@ -57,14 +61,17 @@
   --primary-white: #1e1e1e;
   --primary-background: #0f172a;
   --light-variant-one: #334155;
-  --light-variant-two: #282A3A;
-  --light-variant-three: #2A2A2A;
-  --light-variant-four: #3B4655;
-  --light-variant-five: #5C3A40;
-  --light-variant-six: #3A2F1B;
-  --light-variant-seven: #5A3E7F;
-  --light-variant-eight: #1E3B4B;
-  --light-variant-nine: #4A5D37;
+  --light-variant-two: #282a3a;
+  --light-variant-three: #2a2a2a;
+  --light-variant-four: #3b4655;
+  --light-variant-five: #5c3a40;
+  --light-variant-six: #3a2f1b;
+  --light-variant-seven: #5a3e7f;
+  --light-variant-eight: #1e3b4b;
+  --light-variant-nine: #4a5d37;
+  --light-variant-ten: #3e2e6d;
+  --light-variant-eleven: #263445;
+  --light-variant-twelve: #0b2a44;
 
   --black-variant-one: #94a3b8;
 
@@ -80,7 +87,7 @@
 }
 
 @theme {
-  --font-display: "Geist", sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
 
   --breakpoint-sm: 320px;
   --breakpoint-md: 480px;
@@ -113,6 +120,9 @@
   --color-light-variant-eight: var(--light-variant-eight);
   --color-light-variant-nine: var(--light-variant-nine);
   --color-light-variant-ten: var(--light-variant-ten);
+  --color-light-variant-eleven: var(--light-variant-eleven);
+  --color-light-variant-twelve: var(--light-variant-twelve);
+
   --color-black-variant-one: var(--black-variant-one);
   --color-black-variant-two: var(--black-variant-two);
 
@@ -155,4 +165,22 @@ table tbody tr td {
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: left;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6dee1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8bbbf;
 }
