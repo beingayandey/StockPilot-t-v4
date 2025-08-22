@@ -34,7 +34,7 @@ const Layout = () => {
 
                     <Header toggleSidebar={toggleSidebar} setIsOpen={setIsSidebarOpen} toggleNotification={toggleNotification} isNotificationOpen={isNotificationOpen} />
 
-                    <div className="main-content p-2">
+                    <div className="main-content p-5">
 
                         <Routes>
                             <Route index element={<Dashboard />} />
