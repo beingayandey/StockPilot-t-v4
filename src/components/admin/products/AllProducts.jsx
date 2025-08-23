@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import APTableFooter from "./APTableFooter";
+
 import APTableBody from "./APTableBody";
 
 import APTableHeader from "./APTableHeader";
+import TableFilter from "../common/TableFilter";
+import TablePagination from "../common/TablePagination";
 
 // Mock product data
 const mockProducts = Array.from({ length: 100 }, (_, i) => ({
@@ -169,26 +171,12 @@ const AllProducts = () => {
 
             <div className="bg-light-variant-eleven rounded border border-neutral-300 shadow-sm w-full">
                 {/* Filter + Rows per page */}
-                <div className="flex items-center justify-between p-2 border-b border-neutral-300">
-                    <input
-                        type="text"
-                        placeholder="Search products..."
-                        value={filterText}
-                        onChange={(e) => setFilterText(e.target.value)}
-                        className="px-2 py-1 border border-black-variant-two text-primary-black bg-primary-white focus:outline-none placeholder:text-neutral-400 rounded-md text-sm"
-                    />
-                    <select
-                        value={rowsPerPage}
-                        onChange={(e) => setRowsPerPage(Number(e.target.value))}
-                        className="p-1 border rounded-md text-sm bg-primary-white border-black-variant-two text-primary-black focus:outline-none"
-                    >
-                        {[10, 50, 100, 1000].map((val) => (
-                            <option key={val} value={val}>
-                                {val} rows
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                <TableFilter
+                    filterText={filterText}
+                    setFilterText={setFilterText}
+                    rowsPerPage={rowsPerPage}
+                    setRowsPerPage={setRowsPerPage}
+                />
 
                 <div className="overflow-x-auto">
                     <motion.table
@@ -219,7 +207,7 @@ const AllProducts = () => {
                     </motion.table>
                 </div>
 
-                <APTableFooter
+                <TablePagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     totalRows={totalRows}

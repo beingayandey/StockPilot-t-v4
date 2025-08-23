@@ -4,7 +4,9 @@ import { cls } from "../../components/admin/addProduct/cls"; // reuse compact cl
 import CategoryForm from "../../components/admin/categories/CategoryForm";
 import CatTableHeader from "../../components/admin/categories/CatTableHeader";
 import CatTableBody from "../../components/admin/categories/CatTableBody";
-import CatTableFooter from "../../components/admin/categories/CatTableFooter";
+
+import TableFilter from "../../components/admin/common/TableFilter";
+import TablePagination from "../../components/admin/common/TablePagination";
 
 const mockCategories = [
     { id: "CAT001", name: "Electronics", slug: "electronics", parent: "", productCount: 128, status: "active", image: "" },
@@ -152,22 +154,12 @@ const Categories = function () {
 
             <div className="bg-neutral-100 rounded border border-neutral-300 shadow-sm w-full">
                 {/* Filter + Rows per page */}
-                <div className="flex items-center justify-between p-2 border-b border-neutral-300">
-                    <input
-                        type="text"
-                        placeholder="Search categories..."
-                        value={filterText}
-                        onChange={(e) => setFilterText(e.target.value)}
-                        className="px-2 py-1 border border-black-variant-two text-primary-black bg-primary-white focus:outline-none placeholder:text-neutral-400 rounded-md text-sm"
-                    />
-                    <select
-                        value={rowsPerPage}
-                        onChange={(e) => { setRowsPerPage(Number(e.target.value)); setCurrentPage(1); }}
-                        className="p-1 border rounded-md text-sm bg-primary-white border-black-variant-two text-primary-black focus:outline-none"
-                    >
-                        {[10, 50, 100, 1000].map((v) => <option key={v} value={v}>{v} rows</option>)}
-                    </select>
-                </div>
+                <TableFilter
+                    filterText={filterText}
+                    setFilterText={setFilterText}
+                    rowsPerPage={rowsPerPage}
+                    setRowsPerPage={setRowsPerPage}
+                />
 
                 <div className="overflow-x-auto">
                     <table className="w-full">
@@ -192,14 +184,12 @@ const Categories = function () {
                     </table>
                 </div>
 
-                <CatTableFooter
+                <TablePagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     totalRows={totalRows}
                     selectedCount={selectedRows.length}
                     onPageChange={setCurrentPage}
-                    rowsPerPage={rowsPerPage}
-                    setRowsPerPage={(v) => { setRowsPerPage(v); setCurrentPage(1); }}
                 />
             </div>
 

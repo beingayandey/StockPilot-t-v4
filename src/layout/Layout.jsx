@@ -7,6 +7,16 @@ import Notifications from '../components/admin/Notifications'
 import Products from '../pages/admin/Products'
 import AddProduct from '../pages/admin/AddProduct'
 import Categories from '../pages/admin/Categories'
+import StockAdjust from '../pages/admin/StockAdjust'
+import BulkIE from '../pages/admin/BulkIE'
+import ProductLogs from '../pages/admin/ProductLogs'
+import AllOrders from '../pages/admin/AllOrders'
+import Pending from '../pages/admin/Pending'
+import CompleteOrder from '../pages/admin/CompleteOrder'
+import Refunds from '../pages/admin/Refunds'
+import Payments from '../pages/admin/Payments'
+import AllUsers from '../pages/admin/AllUsers'
+import Roles from '../pages/admin/Roles'
 
 const Layout = () => {
 
@@ -46,6 +56,27 @@ const Layout = () => {
                             <Route path="/admin/products" element={<Products />} />
                             <Route path="/admin/products/new" element={<AddProduct />} />
                             <Route path="/admin/categories" element={<Categories />} />
+                            <Route path="/admin/inventory/stock-adjust" element={<StockAdjust />} />
+                            <Route path="/admin/inventory/bulk" element={<BulkIE />} />
+                            <Route path="/admin/inventory/logs" element={<ProductLogs />} />
+                            <Route path="/admin/orders" element={<AllOrders />} />
+                            <Route path="/admin/orders/pending" element={<Pending />} />
+                            <Route path="/admin/orders/completed" element={<CompleteOrder />} />
+                            <Route path="/admin/orders/refunds" element={<Refunds />} />
+                            <Route path="/admin/orders/payments" element={<Payments />} />
+                            <Route path="/admin/users" element={<AllUsers />} />
+                            <Route path="/admin/users/roles" element={<Roles />} />
+
+
+
+
+
+
+
+
+
+
+
 
 
 

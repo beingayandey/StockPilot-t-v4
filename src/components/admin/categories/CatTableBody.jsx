@@ -36,9 +36,9 @@ export default function CatTableBody({
                         )}
                     </td>
 
-                    <td className="px-2 py-1.5 text-xs font-medium text-secondary">{row.slug}</td>
+                    <td className="px-2 py-1.5 text-xs font-medium  text-black-variant-one">{row.slug}</td>
                     <td className="px-2 py-1.5 text-sm font-medium text-primary-black">{row.name}</td>
-                    <td className="px-2 py-1.5 text-sm">{row.parent || "—"}</td>
+                    <td className="px-2 py-1.5 text-sm text-primary-black">{row.parent || "—"}</td>
                     <td className="px-2 py-1.5 text-sm">{row.productCount}</td>
                     <td className="px-2 py-1.5">
                         <button
@@ -60,12 +60,7 @@ export default function CatTableBody({
                 </tr>
             ))}
 
-            {/* pad rows to keep height stable */}
-            {Array.from({ length: pad }).map((_, idx) => (
-                <tr key={`pad-${idx}`} aria-hidden="true" className="opacity-0 pointer-events-none">
-                    <td className="py-[11px]" colSpan={colSpan}>&nbsp;</td>
-                </tr>
-            ))}
+
         </tbody>
     );
 }

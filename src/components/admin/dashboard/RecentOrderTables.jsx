@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { DotsThree, CaretUp, CaretDown } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
-import TableFooter from './TableFooter';
+import TablePagination from '../common/TablePagination';
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
+import TableFilter from '../common/TableFilter';
 
 const mockData = [
     {
@@ -156,24 +157,11 @@ const RecentOrderTables = () => {
 
             <div className="bg-neutral-100 rounded border border-neutral-300 shadow-sm w-full">
                 {/* Filter + Rows per page */}
-                <div className="flex items-center justify-between p-2 border-b border-neutral-300">
-                    <input
-                        type="text"
-                        placeholder="Filter orders..."
-                        value={filterText}
-                        onChange={(e) => setFilterText(e.target.value)}
-                        className="px-2 py-1 border border-black-variant-two text-primary-black bg-primary-white focus:outline-none placeholder:text-neutral-400 rounded-md text-sm"
-                    />
-                    <select
-                        value={rowsPerPage}
-                        onChange={(e) => setRowsPerPage(Number(e.target.value))}
-                        className=" p-1 border rounded-md text-sm bg-primary-white border-black-variant-two text-primary-black focus:outline-none"
-                    >
-                        <option value={5}>5 rows</option>
-                        <option value={10}>10 rows</option>
-                        <option value={20}>20 rows</option>
-                    </select>
-                </div>
+                <TableFilter filterText={filterText}
+                    setFilterText={setFilterText}
+                    rowsPerPage={rowsPerPage}
+                    setRowsPerPage={setRowsPerPage}
+                    placeholder="Search products..." />
 
                 <div className="overflow-x-auto">
                     <motion.table
@@ -201,7 +189,7 @@ const RecentOrderTables = () => {
                     </motion.table>
                 </div>
 
-                <TableFooter
+                <TablePagination
                     currentPage={currentPage}
                     totalPages={totalPages}
                     totalRows={totalRows}
