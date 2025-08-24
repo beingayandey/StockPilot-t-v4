@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as PhosphorIcons from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 const UserMenu = ({ expanded }) => {
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -35,11 +36,9 @@ const UserMenu = ({ expanded }) => {
                        rounded shadow-lg overflow-hidden"
                     >
                         <li className="px-4 py-2 hover:bg-[var(--color-primary-black)] hover:text-[var(--color-primary-white)]">
-                            Profile
+                            <Link to={"/admin/profile"}> Profile </Link>
                         </li>
-                        <li className="px-4 py-2 hover:bg-[var(--color-primary-black)] hover:text-[var(--color-primary-white)]">
-                            Settings
-                        </li>
+
                         <li className="px-4 py-2 hover:bg-[var(--color-primary-black)] hover:text-[var(--color-primary-white)]">
                             Logout
                         </li>

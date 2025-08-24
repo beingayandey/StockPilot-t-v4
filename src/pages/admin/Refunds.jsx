@@ -39,79 +39,86 @@ const Refunds = () => {
     const pageRows = filtered.slice(start, start + rowsPerPage);
 
     return (
-        <div className={`${cls.card} mt-2`}>
-            {/* Header filter (reusable) */}
-            <div className="border-b border-neutral-300">
-                <TableFilter
-                    filterText={filterText}
-                    setFilterText={(v) => {
-                        setFilterText(v);
-                        setCurrentPage(1);
-                    }}
-                    rowsPerPage={rowsPerPage}
-                    setRowsPerPage={(n) => {
-                        setRowsPerPage(n);
-                        setCurrentPage(1);
-                    }}
-                    placeholder="Search refunds..."
+        <>
+
+
+            <span className="text-base font-semibold text-primary-black mb-3">Refunds</span>
+            <div className={`${cls.card} mt-2`}>
+
+
+                {/* Header filter (reusable) */}
+                <div className="border-b border-neutral-300">
+                    <TableFilter
+                        filterText={filterText}
+                        setFilterText={(v) => {
+                            setFilterText(v);
+                            setCurrentPage(1);
+                        }}
+                        rowsPerPage={rowsPerPage}
+                        setRowsPerPage={(n) => {
+                            setRowsPerPage(n);
+                            setCurrentPage(1);
+                        }}
+                        placeholder="Search refunds..."
+                    />
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="w-full">
+                        <thead className="bg-neutral-100">
+                            <tr>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Refund ID</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Order ID</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Customer</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Amount</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Status</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Date</th>
+                                <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody className="divide-y divide-neutral-300">
+                            {pageRows.map((r) => (
+                                <tr key={r.refundId} className="hover:bg-primary-white">
+                                    <td className="px-4 py-2 text-sm text-primary-black">{r.refundId}</td>
+                                    <td className="px-4 py-2 text-sm text-primary-black">{r.orderId}</td>
+                                    <td className="px-4 py-2 text-sm text-primary-black">{r.customer}</td>
+                                    <td className="px-4 py-2 text-sm text-primary-black">₹{r.amount}</td>
+                                    <td className="px-4 py-2">
+                                        <span className={pillCls(r.status)}>{r.status}</span>
+                                    </td>
+                                    <td className="px-4 py-2 text-sm text-primary-black">{r.date}</td>
+                                    <td className="px-4 py-2">
+                                        <button
+                                            onClick={() => console.log("View refund:", r)}
+                                            className={`${cls.btn} ${cls.btnPrimary}`}
+                                        >
+                                            View
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+
+                            {pageRows.length === 0 && (
+                                <tr>
+                                    <td colSpan={7} className="px-4 py-6 text-center text-neutral-700">
+                                        No refunds found
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+
+                <TablePagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    totalRows={filtered.length}
+                    selectedCount={0}
+                    onPageChange={setCurrentPage}
                 />
             </div>
-
-            <div className="overflow-x-auto">
-                <table className="w-full">
-                    <thead className="bg-neutral-100">
-                        <tr>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Refund ID</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Order ID</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Customer</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Amount</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Status</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Date</th>
-                            <th className="px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300">Actions</th>
-                        </tr>
-                    </thead>
-
-                    <tbody className="divide-y divide-neutral-300">
-                        {pageRows.map((r) => (
-                            <tr key={r.refundId} className="hover:bg-primary-white">
-                                <td className="px-4 py-2 text-sm text-primary-black">{r.refundId}</td>
-                                <td className="px-4 py-2 text-sm text-primary-black">{r.orderId}</td>
-                                <td className="px-4 py-2 text-sm text-primary-black">{r.customer}</td>
-                                <td className="px-4 py-2 text-sm text-primary-black">₹{r.amount}</td>
-                                <td className="px-4 py-2">
-                                    <span className={pillCls(r.status)}>{r.status}</span>
-                                </td>
-                                <td className="px-4 py-2 text-sm text-primary-black">{r.date}</td>
-                                <td className="px-4 py-2">
-                                    <button
-                                        onClick={() => console.log("View refund:", r)}
-                                        className={`${cls.btn} ${cls.btnPrimary}`}
-                                    >
-                                        View
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-
-                        {pageRows.length === 0 && (
-                            <tr>
-                                <td colSpan={7} className="px-4 py-6 text-center text-neutral-700">
-                                    No refunds found
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
-
-            <TablePagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                totalRows={filtered.length}
-                selectedCount={0}
-                onPageChange={setCurrentPage}
-            />
-        </div>
+        </>
     );
 };
 

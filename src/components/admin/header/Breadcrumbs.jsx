@@ -20,9 +20,9 @@ const Breadcrumbs = () => {
                         <li key={name} className="flex items-center space-x-1">
                             <span className="text-[var(--color-black-variant-one)]">/</span>
                             {isLast ? (
-                                <span className="px-3 font-medium capitalize">{decodeURIComponent(name)}</span>
+                                <span className="px-3  text-primary-black font-medium capitalize">{decodeURIComponent(name)}</span>
                             ) : (
-                                <Link to={routeTo} className="px-3 capitalize hover:text-[var(--color-primary)]">
+                                <Link to={routeTo} className="px-3 capitalize text-primary-black hover:text-[var(--color-primary)]">
                                     {decodeURIComponent(name)}
                                 </Link>
                             )}

@@ -1,5 +1,6 @@
 // src/components/productLogs/LogsTable.jsx
 import React from "react";
+import { cls } from "../addProduct/cls";
 
 const LogsTable = ({ data }) => {
     return (
@@ -7,28 +8,28 @@ const LogsTable = ({ data }) => {
             <table className="w-full text-sm">
                 <thead className="bg-neutral-200 text-left">
                     <tr>
-                        <th className="p-2">ID</th>
-                        <th className="p-2">Product</th>
-                        <th className="p-2">Action</th>
-                        <th className="p-2">Qty</th>
-                        <th className="p-2">User</th>
-                        <th className="p-2">Date</th>
+                        <th className={cls.th}>ID</th>
+                        <th className={cls.th}>Product</th>
+                        <th className={cls.th}>Action</th>
+                        <th className={cls.th}>Qty</th>
+                        <th className={cls.th}>User</th>
+                        <th className={cls.th}>Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data.map((log) => (
                         <tr key={log.id} className="border-t">
-                            <td className="p-2">{log.id}</td>
-                            <td className="p-2">{log.product}</td>
-                            <td className="p-2">{log.action}</td>
+                            <td className="px-4 py-2 text-sm text-primary-black">{log.id}</td>
+                            <td className="px-4 py-2 text-sm text-primary-black">{log.product}</td>
+                            <td className="px-4 py-2 text-sm text-primary-black">{log.action}</td>
                             <td
-                                className={`p-2 font-medium ${log.qty > 0 ? "text-green-600" : "text-red-600"
+                                className={`px-4 py-2 text-sm text-primary-black font-medium ${log.qty > 0 ? "text-green-600" : "text-red-600"
                                     }`}
                             >
                                 {log.qty > 0 ? `+${log.qty}` : log.qty}
                             </td>
-                            <td className="p-2">{log.user}</td>
-                            <td className="p-2">{log.date}</td>
+                            <td className="px-4 py-2 text-sm text-primary-black">{log.user}</td>
+                            <td className="px-4 py-2 text-sm text-primary-black">{log.date}</td>
                         </tr>
                     ))}
                 </tbody>

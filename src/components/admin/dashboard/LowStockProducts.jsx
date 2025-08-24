@@ -21,18 +21,18 @@ const LowStockProducts = () => {
                     <table className="table-hover text-xs w-full">
                         <thead>
                             <tr className='hover:bg-primary-white border-b border-b-black-variant-two'>
-                                <th>Item</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Status</th>
+                                <th className='text-primary-black'>Item</th>
+                                <th className='text-primary-black'>Price</th>
+                                <th className='text-primary-black'>Quantity</th>
+                                <th className='text-primary-black'>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {products.map((item, index) => (
                                 <tr key={index}>
-                                    <td className="whitespace-nowrap">{item.name}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.stock}</td>
+                                    <td className="whitespace-nowrap text-primary-black">{item.name}</td>
+                                    <td className='text-primary-black'>{item.price}</td>
+                                    <td className='text-primary-black'>{item.stock}</td>
                                     <td className="whitespace-nowrap">
                                         {item.status === "Critical" && (
                                             <p className="px-1.5 text-[#DC2626] bg-[#FEE2E2] text-xs rounded-[18px] inline-block">

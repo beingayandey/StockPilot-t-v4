@@ -9,9 +9,10 @@ export const cls = {
     input: "w-full px-2 placeholder:text-sm text-sm py-1.5 bg-primary-white text-primary-black border border-black-variant-two rounded focus:outline-none",
     select: "w-full px-2 placeholder:text-sm text-sm py-1.5 bg-primary-white text-sm text-primary-black border border-black-variant-two rounded focus:outline-none",
     textarea: "w-full placeholder:text-sm text-sm px-2 py-1.5 bg-primary-white text-primary-black border border-black-variant-two rounded focus:outline-none",
+    th: "px-4 py-2 text-xs font-semibold text-primary-black border-b border-neutral-300",
 
     chip: "px-2 py-1 text-[11px] rounded bg-light-variant-eleven text-primary-black border border-neutral-300",
-    btn: "px-2.5 py-1.5 rounded text-xs",
-    btnPrimary: "bg-primary text-white",
-    btnGhost: "bg-primary-white border border-neutral-300 text-primary-black",
+    btn: "px-2.5 py-1.5 rounded text-xs cursor-pointer",
+    btnPrimary: "bg-primary text-white cursor-pointer",
+    btnGhost: "bg-primary-white border border-neutral-300 text-primary-black cursor-pointer",
 };

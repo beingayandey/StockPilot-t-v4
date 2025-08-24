@@ -39,9 +39,9 @@ export const menuData = [{ label: "Dashboard", path: "/admin", icon: "Layout" },
 {
     label: "Tools", icon: "Wrench",
     children: [
-        { label: "Seed / Import Demo", path: "/admin/tools/seed" },
+        // { label: "Seed / Import Demo", path: "/admin/tools/seed" },
         { label: "Backup / Export", path: "/admin/tools/backup-export" },
-        { label: "Migrations", path: "/admin/tools/migrations" },
+        // { label: "Migrations", path: "/admin/tools/migrations" },
     ]
 },
 {
@@ -49,7 +49,7 @@ export const menuData = [{ label: "Dashboard", path: "/admin", icon: "Layout" },
     children: [
         { label: "General", path: "/admin/settings/general" },
         { label: "Payments / Taxes", path: "/admin/settings/payments" },
-        { label: "Email Templates", path: "/admin/settings/emails" },
+        // { label: "Email Templates", path: "/admin/settings/emails" },
         { label: "Storage / CORS", path: "/admin/settings/storage" },
     ]
 },

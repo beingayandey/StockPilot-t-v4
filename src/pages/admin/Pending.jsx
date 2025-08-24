@@ -38,6 +38,7 @@ const Pending = () => {
 
     return (
         <div className="p-4">
+            <span className="text-base font-semibold text-primary-black mb-3">Pending / Processing</span>
             <TableFilter
                 filterText={filterText}
                 setFilterText={setFilterText}

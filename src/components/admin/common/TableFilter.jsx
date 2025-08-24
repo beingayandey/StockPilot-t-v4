@@ -3,7 +3,7 @@ import React from "react";
 
 const TableFilter = ({ filterText, setFilterText, rowsPerPage, setRowsPerPage, placeholder = "Search..." }) => {
     return (
-        <div className="flex items-center justify-between p-2 border-b border-neutral-300">
+        <div className="flex items-center gap-5 justify-between p-2 border-b border-neutral-300">
             {/* Search Box */}
             <input
                 type="text"
