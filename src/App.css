@@ -1,0 +1,47 @@
+.container {
+    padding: 0 15px;
+}
+
+
+
+input {
+    display: block;
+    width: 100%;
+    font: inherit;
+}
+
+span {
+    display: inline-block;
+}
+
+
+@media (min-width: 570px) {
+    .header-main .container {
+        gap: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 980px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1350px;
+    }
+}
+
+img,
+ion-icon,
+button {
+    display: block;
+}

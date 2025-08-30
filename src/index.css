@@ -19,6 +19,18 @@
   --warning: #e0a82e;
   --danger: #d64545;
 
+  --spanish-gray: hsl(0, 0%, 60%);
+  --sonic-silver: hsl(0, 0%, 47%);
+  --eerie-black: hsl(0, 0%, 13%);
+  --salmon-pink: hsl(353, 100%, 78%);
+  --sandy-brown: hsl(29, 90%, 65%);
+  --bittersweet: hsl(0, 100%, 70%);
+  --ocean-green: hsl(152, 51%, 52%);
+  --davys-gray: hsl(0, 0%, 33%);
+  --cultured: hsl(0, 0%, 93%);
+  --white: hsl(0, 100%, 100%);
+  --onyx: hsl(0, 0%, 27%);
+
   --primary-black: #1e1e1e;
   --primary-white: #ffffff;
   --primary-background: #38425c;
@@ -47,6 +59,25 @@
 
   --info: #3b82f6;
   --highlight: #14b8a6;
+  --fs-1: 1.563rem;
+  --fs-2: 1.375rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.125rem;
+  --fs-5: 1rem;
+  --fs-6: 0.938rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.813rem;
+  --fs-9: 0.75rem;
+  --fs-10: 0.688rem;
+  --fs-11: 0.625rem;
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+  --border-radius-md: 10px;
+  --border-radius-sm: 5px;
+  --transition-timing: 0.2s ease;
 }
 
 .dark {
@@ -89,6 +120,19 @@
 
 @theme {
   --font-display: "Plus Jakarta Sans", sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-sm: 320px;
+  --breakpoint-md: 480px;
+  --breakpoint-lg: 640px;
+  --breakpoint-xl: 768px;
+  --breakpoint-2xl: 991px;
+  --breakpoint-3xl: 1024px;
+  --breakpoint-4xl: 1280px;
+  --breakpoint-5xl: 1366px;
+  --breakpoint-6xl: 1440px;
+  --breakpoint-7xl: 1680px;
+  --breakpoint-8xl: 1920px;
 
   --breakpoint-sm: 320px;
   --breakpoint-md: 480px;
@@ -135,6 +179,18 @@
 
   --color-info: var(--info);
   --color-highlight: var(--highlight);
+
+  --color-spanish-gray: var(--spanish-gray);
+  --color-sonic-silver: var(--sonic-silver);
+  --color-eerie-black: var(--eerie-black);
+  --color-salmon-pink: var(--salmon-pink);
+  --color-sandy-brown: var(--sandy-brown);
+  --color-bittersweet: var(--bittersweet);
+  --color-ocean-green: var(--ocean-green);
+  --color-davys-gray: var(--davys-gray);
+  --color-cultured: var(--cultured);
+  --color-white: var(--white);
+  --color-onyx: var(--onyx);
 
   --radius-sm: 5px;
   --radius-md: 8px;

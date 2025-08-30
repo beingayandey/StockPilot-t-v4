@@ -40,7 +40,6 @@ const AppRoutes = () => {
             {/* User Layout */}
             <Route path="/*" element={<UserLayout />}>
                 <Route index element={<Home />} />
-
             </Route>
 
             {/* Admin Layout */}
